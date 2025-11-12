@@ -62,7 +62,7 @@ Dentro do container, você pode executar exemplos:
 ./ns3 run first
 
 # Exemplo do OFSwitch13
-./ns3 run ofswitch13-simple
+./ns3 run ofswitch13-first
 
 # Listar todos os exemplos disponíveis
 ./ns3 run --list
