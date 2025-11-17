@@ -24,15 +24,11 @@ WORKDIR /usr/ns-3-dev
 
 RUN patch -p1 < contrib/ofswitch13/utils/ofswitch13-3_39.patch
 
-# Copiar módulo evalvid
 COPY evalvid /usr/ns-3-dev/contrib/evalvid
 
-# Criar diretório para binários e copiar
 RUN mkdir -p /usr/ns-3-dev/contrib/evalvid/bin
 COPY binarioevalvid/ /usr/ns-3-dev/contrib/evalvid/bin/
 
-# Copiar arquivo de trace para o diretório raiz do NS-3
 RUN cp /usr/ns-3-dev/contrib/evalvid/st_highway_cif.st /usr/ns-3-dev/
 
-# Configurar e compilar NS-3 com evalvid
 RUN ./ns3 configure --enable-examples --enable-tests && ./ns3 build
